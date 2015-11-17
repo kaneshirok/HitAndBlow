@@ -6,9 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<h1>各チーム結果</h1>
+<h1>${ sessionScope.teamName }チーム結果</h1>
 <body>
-XXXXチーム
-XXXチーム
+あなたのチームは以下の成績です。
+<br/>
+<br/>
+トータル経過秒数：${ sessionScope.elapsedTime }秒
+<br/>
+<br/>
+トータル回答数：${ sessionScope.totalAnswerCnt }回
 </body>
 </html>

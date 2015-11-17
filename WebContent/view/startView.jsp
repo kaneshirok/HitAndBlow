@@ -8,8 +8,11 @@
 </head>
 <h1>HitAndBlow Progamme Contest</h1>
 <body>
-	<form action="resultView.jsp">
-		チーム名を入力してください： <input type="text" />
+	<form action="../StartViewController" method="post" >
+		チーム名を入力してください： <input type="text" name="teamName"/>
+		<br />
+		<br />
+		桁数を選択してください：<input type="text" name="numberOfDigit" size="5" />桁
 		<br />
 		<br />
 		<input type="submit" name="startButton" value="スタート"/>

@@ -1,5 +1,8 @@
 package service;
 
+import java.util.Arrays;
+import java.util.List;
+
 import dto.HabResultDto;
 import dto.QuestionDto;
 
@@ -17,6 +20,28 @@ public class PlayerService {
 	 */
 	public QuestionDto createQuestion(HabResultDto habResultDto) {
 
-		return null;
+		// 引数の「1S1B」の結果Dto.クエスチョン履歴リストがNullまたは0件の場合
+		if (habResultDto.getQuestionHistList() == null
+				|| habResultDto.getQuestionHistList().size() == 0) {
+
+			// 1回目のクエスチョンDtoの生成を行う
+			QuestionDto questionDto = new QuestionDto();
+			questionDto.setQuestion("145");
+			return questionDto;
+		}
+
+		// 上記以外の場合(2回目以降のクエスチョンの生成)
+		// 返却値のクエスチョンDtoの生成
+		QuestionDto questionDto = new QuestionDto();
+		List<String> test = Arrays.asList(
+				String.valueOf((int) (Math.random() * 10)),
+				String.valueOf((int) (Math.random() * 10)),
+				String.valueOf((int) (Math.random() * 10)));
+		StringBuilder testStr = new StringBuilder();
+		for (String str : test) {
+			testStr.append(str);
+		}
+		questionDto.setQuestion(testStr.toString());
+		return questionDto;
 	}
 }
